@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[letterpaper, margin=1in]{geometry}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb}
 \usepackage{enumitem}
 
 \title{\textbf{MTE 544 Assignment 1}}
@@ -15,14 +15,117 @@
 \section{Question 1: Mobile Manipulator}
 
 \begin{enumerate}[label=\textbf{(\alph*)}]
-    \item
-    \vspace{2em}
+    \item The transformation matrix between two reference frames is defined as:
+    \begin{equation}
+        \mathcal{G}_b^a = \begin{bmatrix}
+            R_b^a & q \\
+            0 & 1
+        \end{bmatrix} = \begin{bmatrix}
+            \cos\theta & -\sin\theta & x_b \\
+            \sin\theta & \cos\theta & y_b \\
+            0 & 0 & 1
+        \end{bmatrix}
+    \end{equation}
+    where $\bar{p}^a = \mathcal{G}_b^a \bar{p}^b$ with homogeneous coordinates $\bar{p} = \begin{bmatrix} p \\ 1 \end{bmatrix}$.
 
-    \item
-    \vspace{2em}
+    Starting from the end-effector frame $\{E\}$ and proceeding back to the global spatial frame $\{s\}$:
 
-    \item
-    \vspace{2em}
+    \paragraph{1. Transformation from $\{E\}$ to $\{2\}$ ($\mathcal{G}_E^2$):}
+    The end-effector frame $\{E\}$ has its origin displaced by link length $l_2$ along the $X_2$ axis. The rotation is fixed at $\psi = -\frac{\pi}{2}$:
+    \begin{equation}
+        \mathcal{G}_E^2 = \begin{bmatrix}
+            \cos\psi & -\sin\psi & l_2 \\
+            \sin\psi & \cos\psi & 0 \\
+            0 & 0 & 1
+        \end{bmatrix} \xrightarrow{\psi = -\frac{\pi}{2}} \mathcal{G}_E^2 = \begin{bmatrix}
+            0 & 1 & l_2 \\
+            -1 & 0 & 0 \\
+            0 & 0 & 1
+        \end{bmatrix}
+    \end{equation}
+
+    \paragraph{2. Transformation from $\{2\}$ to $\{1\}$ ($\mathcal{G}_2^1$):}
+    Reference frame $\{2\}$ is displaced by link length $l_1$ along the $X_1$ axis with joint rotation $\gamma$:
+    \begin{equation}
+        \mathcal{G}_2^1 = \begin{bmatrix}
+            \cos\gamma & -\sin\gamma & l_1 \\
+            \sin\gamma & \cos\gamma & 0 \\
+            0 & 0 & 1
+        \end{bmatrix}
+    \end{equation}
+
+    \paragraph{3. Transformation from $\{1\}$ to $\{B\}$ ($\mathcal{G}_1^B$):}
+    Reference frame $\{1\}$ is displaced by distance $l_B$ along the $X_B$ axis with joint rotation $\alpha$:
+    \begin{equation}
+        \mathcal{G}_1^B = \begin{bmatrix}
+            \cos\alpha & -\sin\alpha & l_B \\
+            \sin\alpha & \cos\alpha & 0 \\
+            0 & 0 & 1
+        \end{bmatrix}
+    \end{equation}
+
+    \paragraph{4. Transformation from $\{B\}$ to $\{s\}$ ($\mathcal{G}_B^s$):}
+    The base frame $\{B\}$ has its origin at $(x, y)$ in the global reference frame with heading angle $\theta$:
+    \begin{equation}
+        \mathcal{G}_B^s = \begin{bmatrix}
+            \cos\theta & -\sin\theta & x \\
+            \sin\theta & \cos\theta & y \\
+            0 & 0 & 1
+        \end{bmatrix}
+    \end{equation}
+
+    \paragraph{5. Overall Transformation from $\{E\}$ to $\{s\}$ ($\mathcal{G}_E^s$):}
+    The overall transformation from frame $\{E\}$ to the global frame $\{s\}$ is:
+    \begin{equation}
+        \mathcal{G}_E^s = \mathcal{G}_B^s \, \mathcal{G}_1^B \, \mathcal{G}_2^1 \, \mathcal{G}_E^2
+    \end{equation}
+
+    Multiplying and simplifying yields:
+    \begin{equation}
+        \mathcal{G}_E^s = \begin{bmatrix}
+            \sin(\theta + \alpha + \gamma) & \cos(\theta + \alpha + \gamma) & x + l_B \cos\theta + l_1 \cos(\theta + \alpha) + l_2 \cos(\theta + \alpha + \gamma) \\[0.5em]
+            -\cos(\theta + \alpha + \gamma) & \sin(\theta + \alpha + \gamma) & y + l_B \sin\theta + l_1 \sin(\theta + \alpha) + l_2 \sin(\theta + \alpha + \gamma) \\[0.5em]
+            0 & 0 & 1
+        \end{bmatrix}
+    \end{equation}
+
+    \item Given the numerical configuration:
+    \begin{equation*}
+        \theta = -\frac{\pi}{2}, \quad \alpha = \frac{\pi}{6}, \quad \gamma = \frac{\pi}{4}, \quad l_1 = 1, \quad l_2 = 1, \quad l_B = 0.5, \quad x = 0.8, \quad y = 0.8
+    \end{equation*}
+    Substituting these values into the overall transformation matrix yields:
+    \begin{equation}
+        \mathcal{G}_E^s = \begin{bmatrix}
+            -0.2588 & 0.9659 & 2.2659 \\
+            -0.9659 & -0.2588 & -0.8248 \\
+            0 & 0 & 1.0000
+        \end{bmatrix}
+    \end{equation}
+
+    To transform the given points $p_1^E = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$ and $p_2^E = \begin{bmatrix} 0.5 \\ 1 \end{bmatrix}$ to the spatial frame $\{s\}$, we express them in homogeneous coordinates $\bar{p}_i^E = \begin{bmatrix} p_i^E \\ 1 \end{bmatrix}$ and apply $\bar{p}_i^s = \mathcal{G}_E^s \bar{p}_i^E$:
+    \begin{align}
+        \bar{p}_1^s &= \mathcal{G}_E^s \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 2.2659 \\ -0.8248 \\ 1.0000 \end{bmatrix} \implies p_1^s = \begin{bmatrix} 2.2659 \\ -0.8248 \end{bmatrix} \\[0.8em]
+        \bar{p}_2^s &= \mathcal{G}_E^s \begin{bmatrix} 0.5 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 3.1024 \\ -1.5666 \\ 1.0000 \end{bmatrix} \implies p_2^s = \begin{bmatrix} 3.1024 \\ -1.5666 \end{bmatrix}
+    \end{align}
+    \item A target object point is measured in the robot base frame $\{B\}$ as $q^B = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$, with homogeneous coordinates $\bar{q}^B = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$.
+
+    The kinematic transformation from the end-effector frame $\{E\}$ to the base frame $\{B\}$ is given by the chain of transformations as we have seen before in part (a):
+    \begin{equation}
+        \bar{q}^B = \mathcal{G}_1^B \, \mathcal{G}_2^1 \, \mathcal{G}_E^2 \, \bar{q}^E = \mathcal{G}_E^B \bar{q}^E
+    \end{equation}
+    To express the target point in the end-effector frame $\{E\}$ for grasping, we invert this transformation. Note this means inverting the matricies as well as the order of multiplication:
+    \begin{equation}
+        \bar{q}^E = (\mathcal{G}_E^B)^{-1} \bar{q}^B = (\mathcal{G}_E^2)^{-1} (\mathcal{G}_2^1)^{-1} (\mathcal{G}_1^B)^{-1} \bar{q}^B
+    \end{equation}
+
+    Evaluating the transformation with the numerical configuration from part \textbf{(b)}:
+    \begin{equation}
+        \bar{q}^E = (\mathcal{G}_E^2)^{-1} (\mathcal{G}_2^1)^{-1} (\mathcal{G}_1^B)^{-1} \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix} = \begin{bmatrix} -0.7418 \\ 0.3542 \\ 1.0000 \end{bmatrix}
+    \end{equation}
+    Thus the location of the point in the end-effector frame $\{E\}$ is:
+    \begin{equation}
+        q^E = \begin{bmatrix} -0.7418 \\ 0.3542 \end{bmatrix}
+    \end{equation}
 \end{enumerate}
 
 \section{Question 2: Differential-Drive Simulation}

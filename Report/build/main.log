@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.2)  2 OCT 2026 10:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.2)  2 OCT 2026 15:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -121,7 +121,18 @@ LaTeX Info: Redefining \Relbar on input line 970.
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
 )
-(C:\Users\sengu\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+(C:\Users\sengu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\sengu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\sengu\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.st
+y
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip54
 \enit@outerparindent=\dimen166
@@ -188,9 +199,21 @@ LaTeX Font Info:    ... okay on input line 11.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
+
+(C:\Users\sengu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
+
+
+(C:\Users\sengu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 [1
 
 {C:/Users/sengu/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+[3]
 (c:/Users\sengu\Documents\School\4A\MTE 544\MTE544_Assignment_1\Report\build\ma
 in.aux)
  ***********
@@ -199,22 +222,31 @@ L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 2113 strings out of 467871
- 33790 string characters out of 5418376
- 448543 words of memory out of 5000000
- 31021 multiletter control sequences out of 15000+600000
- 632950 words of font info for 58 fonts, out of 8000000 for 9000
+ 2652 strings out of 467871
+ 40298 string characters out of 5418376
+ 463151 words of memory out of 5000000
+ 31543 multiletter control sequences out of 15000+600000
+ 635433 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,293b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,14n,65p,435b,397s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/sengu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/sengu/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Users/sengu/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><C:/Users/sengu/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr12.pfb>
+ublic/amsfonts/cm/cmex10.pfb><C:/Users/sengu/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/sengu/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/sengu/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/sengu/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/sengu/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users
+/sengu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C
+:/Users/sengu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Users/sengu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Users/sengu/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb>
 Output written on "c:/Users\sengu\Documents\School\4A\MTE 544\MTE544_Assignment
-_1\Report\build\main.pdf" (2 pages, 56802 bytes).
+_1\Report\build\main.pdf" (3 pages, 147206 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
