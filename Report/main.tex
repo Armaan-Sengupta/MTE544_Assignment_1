@@ -1,102 +1,75 @@
 \documentclass[11pt]{article}
 
 \usepackage[letterpaper, margin=1in]{geometry}
-\usepackage{amsmath, amssymb}
-\usepackage{booktabs}
-\usepackage{caption}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage[hidelinks]{hyperref}
-\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{enumitem}
 
-\graphicspath{{../img/}}
-
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{MTE 544}
-\chead{Technical Report}
-\rhead{Fall 2026}
-\cfoot{\thepage}
-\setlength{\headheight}{13.6pt}
-
-\title{\textbf{MTE 544 Technical Report}\\[0.5em]
-    \large Assignment Title}
+\title{\textbf{MTE 544 Assignment 1}}
 \author{Armaan Sengupta\\20991907}
-\date{\today}
+\date{}
 
 \begin{document}
 
 \maketitle
-\thispagestyle{empty}
 
-\begin{abstract}
-    Summarize the purpose, method, main result, and conclusion of the report in approximately 100--200 words.
-\end{abstract}
+\section{Question 1: Mobile Manipulator}
 
-\tableofcontents
-\newpage
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item
+    \vspace{2em}
 
-\section{Introduction}
-\label{sec:introduction}
-State the problem being investigated, its context, and the objectives of this report.
+    \item
+    \vspace{2em}
 
-\section{Background and Theory}
-\label{sec:theory}
-Present the relevant theory, assumptions, and governing equations. For example,
-\begin{equation}
-    y = mx + b,
-    \label{eq:example}
-\end{equation}
-where the variables and units should be defined in the surrounding text.
+    \item
+    \vspace{2em}
+\end{enumerate}
 
-\section{Methodology}
-\label{sec:methodology}
-Describe the analytical, experimental, or computational procedure clearly enough for the work to be reproduced. Include important parameter values, boundary conditions, and assumptions.
+\section{Question 2: Differential-Drive Simulation}
 
-\section{Results}
-\label{sec:results}
-Present the results using figures and tables. Refer to every figure and table in the text.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item
+    \begin{enumerate}[label=\roman*.]
+        \item Constant velocities
+        \begin{enumerate}[label=\arabic*.]
+            \item
+            \vspace{1em}
 
-\begin{table}[ht]
-    \centering
-    \caption{Example results table. Replace the placeholder values.}
-    \label{tab:results}
-    \begin{tabular}{lcc}
-        \toprule
-        Case & Measurement & Uncertainty \\
-        \midrule
-        Case 1 & -- & -- \\
-        Case 2 & -- & -- \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+            \item
+            \vspace{1em}
 
-% Replace the filename below with a plot from ../img/ when one is available.
-% \begin{figure}[ht]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{plot_filename}
-%     \caption{Descriptive caption including relevant units.}
-%     \label{fig:result}
-% \end{figure}
+            \item
+            \vspace{1em}
+        \end{enumerate}
 
-\section{Discussion}
-\label{sec:discussion}
-Interpret the results, compare them with the expected behaviour or theory, and discuss uncertainty, limitations, and possible sources of error.
+        \item Velocity profiles
+        \vspace{2em}
+    \end{enumerate}
 
-\section{Conclusion}
-\label{sec:conclusion}
-Summarize the main findings and state whether the report objectives were met.
+    \item
+    \vspace{2em}
+\end{enumerate}
 
-\section*{References}
-\addcontentsline{toc}{section}{References}
-\begin{thebibliography}{9}
-    \bibitem{course-notes}
-    Course notes or other source, \emph{Course or Document Title}, year.
-\end{thebibliography}
+\section{Question 3: 3-Omniwheel Simulation}
 
-\appendix
-\section{Additional Details}
-\label{sec:appendix}
-Include supplementary derivations, additional plots, code excerpts, or other supporting material here.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item
+    \vspace{2em}
+
+    \item
+    \begin{enumerate}[label=\Roman*.]
+        \item Rotation inputs
+        \vspace{2em}
+
+        \item Designed control signals
+        \begin{enumerate}[label=\arabic*.]
+            \item Straight line with a slope of 60 degrees
+            \vspace{2em}
+
+            \item Two-metre diameter circle
+            \vspace{2em}
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
 
 \end{document}
