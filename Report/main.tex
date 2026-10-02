@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{siunitx}
+
+\graphicspath{{../img/}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{MTE 544}
+\chead{Technical Report}
+\rhead{Fall 2026}
+\cfoot{\thepage}
+\setlength{\headheight}{13.6pt}
+
+\title{\textbf{MTE 544 Technical Report}\\[0.5em]
+    \large Assignment Title}
+\author{Armaan Sengupta\\20991907}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+    Summarize the purpose, method, main result, and conclusion of the report in approximately 100--200 words.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\label{sec:introduction}
+State the problem being investigated, its context, and the objectives of this report.
+
+\section{Background and Theory}
+\label{sec:theory}
+Present the relevant theory, assumptions, and governing equations. For example,
+\begin{equation}
+    y = mx + b,
+    \label{eq:example}
+\end{equation}
+where the variables and units should be defined in the surrounding text.
+
+\section{Methodology}
+\label{sec:methodology}
+Describe the analytical, experimental, or computational procedure clearly enough for the work to be reproduced. Include important parameter values, boundary conditions, and assumptions.
+
+\section{Results}
+\label{sec:results}
+Present the results using figures and tables. Refer to every figure and table in the text.
+
+\begin{table}[ht]
+    \centering
+    \caption{Example results table. Replace the placeholder values.}
+    \label{tab:results}
+    \begin{tabular}{lcc}
+        \toprule
+        Case & Measurement & Uncertainty \\
+        \midrule
+        Case 1 & -- & -- \\
+        Case 2 & -- & -- \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% Replace the filename below with a plot from ../img/ when one is available.
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{plot_filename}
+%     \caption{Descriptive caption including relevant units.}
+%     \label{fig:result}
+% \end{figure}
+
+\section{Discussion}
+\label{sec:discussion}
+Interpret the results, compare them with the expected behaviour or theory, and discuss uncertainty, limitations, and possible sources of error.
+
+\section{Conclusion}
+\label{sec:conclusion}
+Summarize the main findings and state whether the report objectives were met.
+
+\section*{References}
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{9}
+    \bibitem{course-notes}
+    Course notes or other source, \emph{Course or Document Title}, year.
+\end{thebibliography}
+
+\appendix
+\section{Additional Details}
+\label{sec:appendix}
+Include supplementary derivations, additional plots, code excerpts, or other supporting material here.
+
+\end{document}
