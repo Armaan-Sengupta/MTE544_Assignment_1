@@ -3,10 +3,9 @@ clear;
 
 syms theta l r u1 u2 u3 real
 
-% Wheel orientation angles
+% Wheel orientation angles, Beta 1,2,3
 beta = [sym(pi)/2; 7*sym(pi)/6; 11*sym(pi)/6];
 
-% matrix mapping [x_dot; y_dot; theta_dot] to wheel speeds:
 % u = (1/r) * G * [x_dot; y_dot; theta_dot]
 G = [cos(theta + beta(1)), sin(theta + beta(1)), l;
         cos(theta + beta(2)), sin(theta + beta(2)), l;
@@ -30,7 +29,7 @@ fprintf('\n--- Forward Kinematics: u = (1/r) * G * q_dot ---\n');
 disp(u_general);
 
 %% Part (b).II.1: Straight line with a slope of 60 degrees
-fprintf('\n--- Part (b).II.1: Control Signals for 60 deg Slope ---\n');
+fprintf('\n--- Part (b).II.1: ---\n');
 q_dot_slope60 = [1; sqrt(sym(3)); 0];
 u_slope60 = subs((1/r) * G * q_dot_slope60, {theta, r, l}, {0, sym(1)/10, sym(25)/100});
 
@@ -38,7 +37,7 @@ fprintf('[u1; u2; u3]:\n');
 disp(u_slope60);
 
 %% Part (b).II.2: R=1 Circle
-fprintf('\n--- Part (b).II.2: R=1 Circle with [cos(theta); sin(theta); 1] ---\n');
+fprintf('\n--- Part (b).II.2: ---\n');
 q_dot_circle = [cos(theta); sin(theta); 1];
 u_circle_sym = simplify((1/r) * G * q_dot_circle);
 
